@@ -1,0 +1,26 @@
+<!-- /views/Login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Login</a></li>
+                <li><a href="/Welcome">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="/Login" method="POST">
+            <input type="email" name="email">
+            <button type="submit">Login</button>
+        </form>
+    </main>
+</body>
+</html>
