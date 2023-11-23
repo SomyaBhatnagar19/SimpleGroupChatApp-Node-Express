@@ -1,6 +1,7 @@
 /* Importing below */
 const path = require('path');
 const express = require('express');
+const rootDirectory = require('../utli/path');
 const router = express.Router();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -11,20 +12,7 @@ router.use(cookieParser());
 
 // Middleware to get the login details
 router.get("/", (req, res) => {
-  // res.send(`
-  //   <html>
-      
-  //     <body>
-  //       <form method="post" action="/Login">
-  //         <h2>Login Page</h2>
-  //         <label for="email">Email Id: </label>
-  //         <input type="email" name="email" id="email" required>
-  //         <button type="submit">Login</button>
-  //       </form>
-  //     </body>
-  //   </html>
-  // `);
-  res.sendFile(path.join(__dirname, '../', 'views', 'Login.html'));
+  res.sendFile(path.join(rootDirectory, 'views', 'Login.html'));
 
 });
 
