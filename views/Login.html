@@ -1,27 +1,54 @@
 <!-- /views/Login.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Login</a></li>
-                <li><a href="/Welcome">Chat</a></li>
-            </ul>
-        </nav>
+    <style>
+      .login-main-body_button {
+    background-color: rgb(131, 51, 51);
+    color: rgb(110, 110, 214); 
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+      .login-main-body {
+        padding: 1rem;
+        margin-top: 2rem;
+        background-color: rgb(194, 143, 77);
+        box-shadow: 2px 8px 4px 0px rgb(34, 33, 33);
+        width: 45%;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+      }
+
+      .main-header {
+        background-color: rgb(240, 212, 87);
+        padding: 0.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-header_nav">
+        <ul class="main-header_ul">
+          <li class="main-header_li"><a href="/">Login</a></li>
+          <li class="main-header_li"><a href="/Welcome">Chat</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
-        <form action="/Login" method="POST">
-            <label>Email Id: </label>
-            <input type="email" name="email">
-            <button type="submit">Login</button>
-        </form>
+    <main class="login-main-body">
+      <form action="/Login" method="POST">
+        <label class="login-main-body_label">Email Id: </label>
+        <input type="email" name="email" class="login-main-body_input" />
+        <button type="submit" login-main-body_button>Login</button>
+      </form>
     </main>
-</body>
+  </body>
 </html>
