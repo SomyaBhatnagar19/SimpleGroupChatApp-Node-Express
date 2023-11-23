@@ -1,0 +1,57 @@
+<!-- /views/ContactUs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        .login-main-body {
+        padding: 1rem;
+        margin-top: 2rem;
+        background-color: rgb(194, 143, 77);
+        box-shadow: 2px 8px 4px 0px rgb(34, 33, 33);
+        width: 45%;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+      }
+      .main-header_li a {
+        color: rgb(82, 123, 158);
+      }
+      .main-header_li {
+        margin-right: 1rem;
+      }
+      .main-header_ul {
+        list-style: none;
+        margin: 1rem;
+        padding: 0.2rem;
+        display: flex;
+      }
+      .main-header {
+        background-color: rgb(240, 212, 87);
+      }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header_nav">
+            <ul class="main-header_ul">
+                <li class="main-header_li"><a href="/">Login</a></li>
+                <li class="main-header_li"><a href="/Welcome">Chat</a></li>
+                <li class="main-header_li"><a href="/contactus">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contactus-main-body">
+        <form action="/contactus/submitContactForm" method="POST">
+            <label for="name">Name: </label>
+            <input type="text" name="name" required>
+            <label for="email">Email: </label>
+            <input type="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

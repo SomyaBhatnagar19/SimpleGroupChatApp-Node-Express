@@ -8,6 +8,8 @@ const app = express();
 /* Importing the files to route */
 const loginRouter = require('./routes/login');
 const chatRouter = require('./routes/chat');
+const contactUsRouter = require('./routes/contactus');
+const successRouter = require('./routes/success');
 
 // Ensure userMessageFiles is available in your routes
 app.use((req, res, next) => {
@@ -17,6 +19,9 @@ app.use((req, res, next) => {
 
 app.use('/', loginRouter);
 app.use('/chat', chatRouter);
+/* Code using the success and contactus form from the routes */
+app.use('/contactus', contactUsRouter);
+app.use('/success', successRouter);
 
 /* Code for 404 error & its conncetion with the views html file */
 app.use((req, res, next) => {
