@@ -1,4 +1,5 @@
 /* Importing */
+const path = require('path');
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
@@ -21,27 +22,28 @@ router.get('/Welcome', (req, res) => {
   // Concatenate and split messages to display in the UI
   const messages = allMessages.join('\n').split('\n').filter(Boolean);
 
-  res.send(`
-    <html>
-      <h3>Welcome ${username} !!</h3>
-      <p>Email: <span id="userEmail"></span></p>
-      <form method="post" action="/chat/Welcome"> 
-        <label>
-          Write your message:
-        </label>
-        <input type="text" name="message">
-        <button type="submit">Send Message</button>
-      </form>
-      <ul>
-        ${messages.map((msg) => `<li>${msg}</li>`).join('')}
-      </ul>
-      <script>
-        // Set the email in local storage
-        const userEmail = localStorage.getItem('email');
-        document.getElementById('userEmail').innerText = userEmail;
-      </script>
-    </html>
-  `);
+  // res.send(`
+  //   <html>
+  //     <h3>Welcome ${username} !!</h3>
+  //     <p>Email: <span id="userEmail"></span></p>
+  //     <form method="post" action="/chat/Welcome"> 
+  //       <label>
+  //         Write your message:
+  //       </label>
+  //       <input type="text" name="message">
+  //       <button type="submit">Send Message</button>
+  //     </form>
+  //     <ul>
+  //       ${messages.map((msg) => `<li>${msg}</li>`).join('')}
+  //     </ul>
+  //     <script>
+  //       // Set the email in local storage
+  //       const userEmail = localStorage.getItem('email');
+  //       document.getElementById('userEmail').innerText = userEmail;
+  //     </script>
+  //   </html>
+  // `);
+  res.sendFile(path.join(__dirname, '../', 'views', 'Chat.html'));
 });
 
 // Handle the form submission in the '/Welcome' route
