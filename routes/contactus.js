@@ -3,15 +3,11 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'views', 'ContactUs.html'));
-});
+/* Importing the controllers for the below get and post requests */
+const getFormDetailsController = require('../controllers/contactSuccess');
+const postFormSubmissionController = require('../controllers/contactSuccess');
+router.get('/', getFormDetailsController.getDetailsOfForm);
 
-router.post('/submitContactForm', (req, res) => {
-    // Handle form submission here
-
-    // Redirect to the success page after processing the form
-    res.redirect('/success');
-});
+router.post('/submitContactForm', postFormSubmissionController.SubmitFormDetails);
 
 module.exports = router;
