@@ -1,10 +1,12 @@
 // routes/success.js
+//http://localhost:3000/success
 const path = require('path');
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../', 'views', 'Success.html'));
-});
+/* Importing the success controller */
+const successMessageController = require('../controllers/contactSuccess');
+
+router.get('/', successMessageController.successMessage);
 
 module.exports = router;
