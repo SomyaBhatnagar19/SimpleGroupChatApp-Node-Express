@@ -11,6 +11,9 @@ const chatRouter = require('./routes/chat');
 const contactUsRouter = require('./routes/contactus');
 const successRouter = require('./routes/success');
 
+/* Importing 404 error handle controller */
+const handle404Controller = require('./controllers/404errorHandle');
+
 // Ensure userMessageFiles is available in your routes
 app.use((req, res, next) => {
   req.userMessageFiles = userMessageFiles;
@@ -24,9 +27,7 @@ app.use('/contactus', contactUsRouter);
 app.use('/success', successRouter);
 
 /* Code for 404 error & its conncetion with the views html file */
-app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
-})
+app.use(handle404Controller.handle404);
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
