@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Login</a></li>
+                <li><a href="/Welcome">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>My chats</h1>
+        <ul>
+            <% for (const message of messages) { %>
+              <li><%= message %></li>
+            <% } %>
+        </ul>
+        <form action="/chat/Welcome" method="POST">
+            <label for="message">Message: </label>
+            <input type="text" name="message" required>
+            <button type="submit">Send</button>
+        </form>
+    </main>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Login</a></li>
+                <li><a href="/Welcome">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>My chats</h1>
+        <p>Messages.....</p>
+    </main>
+</body>
+</html> -->

@@ -28,6 +28,8 @@ app.use('/success', successRouter);
 
 /* Code for 404 error & its conncetion with the views html file */
 app.use(handle404Controller.handle404);
+
+app.set('view engine', 'ejs');
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
